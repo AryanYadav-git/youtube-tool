@@ -55,7 +55,7 @@ function Appbar() {
     return <div >
         <div style={{margin: "1rem 3rem", display: "flex", justifyContent: "space-between",height:"40px" }}>
             <div style={{ display: "flex", gap: "3rem" }}>
-                <Typography variant='h6'>LOGO</Typography>
+                <Typography variant='h6'>MIDDLEMAN</Typography>
                 <Divider orientation='vertical' flexItem></Divider>
                 <div style={{ display: "flex", color: "#9e9e9e", gap: "3rem" }}>
                 <Button variant="text" sx={{color: "#9e9e9e"}} 
@@ -69,7 +69,9 @@ function Appbar() {
                 </div>
             </div>
             <div style={{color: "#9e9e9e", display: "flex", gap: "3rem" }}>
-                <Button variant="text" sx={{color: "#9e9e9e"}}>Login</Button>
+                <Button variant="text" sx={{color: "#9e9e9e"}} onClick={() => {
+                        navigate("/login");
+                    }}>Login</Button>
                 <Button variant="outlined" sx={{color:"black"}}>Signup</Button>
                 <FormGroup>
                     <FormControlLabel
