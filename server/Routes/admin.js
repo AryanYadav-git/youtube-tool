@@ -9,6 +9,7 @@ const { Admin, validate } = require("../DB/user");
 router.post('/signup', async (req, res) => {
     try {
         const { error } = validate(req.body);
+        console.log("2")
         if (error) {
             return res.status(400).send({ message: error.details[0].message });
         }

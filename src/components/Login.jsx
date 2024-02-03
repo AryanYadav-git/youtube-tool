@@ -16,7 +16,7 @@ function Login() {
                         setEmail(elemt.value);
                     }} />
                     <div style={{display: 'flex', flexDirection: 'column'}}>
-                        <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(e) =>{
+                        <TextField id="outlined-basic" label="Password" variant="outlined" type='password' onChange={(e) =>{
                         let elemt = e.target;
                         setPassword(elemt.value);
                     }} />

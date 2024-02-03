@@ -72,7 +72,9 @@ function Appbar() {
                 <Button variant="text" sx={{color: "#9e9e9e"}} onClick={() => {
                         navigate("/login");
                     }}>Login</Button>
-                <Button variant="outlined" sx={{color:"black"}}>Signup</Button>
+                <Button variant="outlined" sx={{color:"black"}} onClick={() => {
+                        navigate("/signup");
+                    }}>Signup</Button>
                 <FormGroup>
                     <FormControlLabel
                         control={<MaterialUISwitch sx={{ m: 0 }} defaultChecked />}
