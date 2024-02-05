@@ -42,15 +42,12 @@ function Login() {
                             }),
                             headers: {
                                 "Content-type": "application/json",
-                                "Authorization": "bearer " + localStorage.getItem("token")
                             }
                         }).then(callback1);
                     }}>Login</Button>
                     <Divider>Or</Divider>
                     <Button variant='text' startIcon={<GoogleIcon/>}>Login with Google</Button>
                 </center>
-                
-
             </div>
         </Card>
     </div>

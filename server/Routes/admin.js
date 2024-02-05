@@ -9,7 +9,6 @@ const { Admin, validate } = require("../DB/user");
 router.post('/signup', async (req, res) => {
     try {
         const { error } = validate(req.body);
-        console.log("2")
         if (error) {
             return res.status(400).send({ message: error.details[0].message });
         }
@@ -22,7 +21,6 @@ router.post('/signup', async (req, res) => {
         }
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashPassword = await bcrypt.hash(password, salt);
-        console.log(hashPassword);
         await new Admin({ ...req.body, password: hashPassword }).save();
         res.status(200).send({ message: "User created successfully" })
     } catch {
@@ -37,6 +35,7 @@ router.post('/login', async (req, res) => {
         const admin = await Admin.findOne({ username });
         if (!admin) {
             res.status(400).send({ message: "Invalid email" });
+            return;
         }
         const validPassword = await bcrypt.compare(
             password,
@@ -44,6 +43,7 @@ router.post('/login', async (req, res) => {
         );
         if (!validPassword) {
             res.status(400).send({ message: "Invalid password" });
+            return;
         }
         const token = jwt.sign({ username, role: 'admin' }, process.env.JWTKEY, {expiresIn:'1h'});
         res.status(200).json({ message: "logged in successfully ", token: token});

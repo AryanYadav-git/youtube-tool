@@ -3,12 +3,9 @@ import { useState } from 'react';
 import GoogleIcon from '@mui/icons-material/Google';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
-import { SnackbarProvider, useSnackbar } from 'notistack';
 
 function Signup() {
     const navigate = useNavigate();
-    const { enqueueSnackbar } = useSnackbar();
-
     const [Name, setName] = useState("");
     const [Phonenumber, setPhonenumber] = useState("");
     const [email, setEmail] = useState("");
@@ -18,7 +15,6 @@ function Signup() {
     const [open, setOpen] = useState(false);
 
     const handleSubmit = async (e) => {
-        console.log("hh");
         // e.preventDefault();
         try {
             if(password !== confirmPassword) {
@@ -28,15 +24,14 @@ function Signup() {
             }
             
             const url = "http://localhost:3000/admin/signup/";
-            console.log("hh");
             const { data: res } = await axios.post(url, {
                 Name: Name,
                 PhoneNumber: Phonenumber,
                 username: email,
                 password: password
             });
+
             setOpen(true);
-            console.log("data");
             navigate("/login");
             console.log(res.message);
         } catch (error) {
@@ -49,9 +44,6 @@ function Signup() {
             }
         }
     };
-    const handleClick = () => {
-        
-    };
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
@@ -59,10 +51,6 @@ function Signup() {
         }
         setOpen(false);
     };
-    // const handleClickVariant = (variant) => () => {
-    //     // variant could be success, error, warning, info, or default
-    //     enqueueSnackbar('Admin created successfully', { variant });
-    //   };
 
     return <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 5rem', }}>
         <Card variant="outlined" style={{ height: '36rem', width: '25rem' }}>
@@ -100,28 +88,6 @@ function Signup() {
                     {error && <div >{error}</div>}
                     <Button variant='contained' onClick={() => {handleSubmit()}
                     }
-                    //  function callback2(data) {
-                    //         localStorage.setItem("token", data.token);
-                    //         window.location = "/"
-                    //     }
-
-                    //     function callback1(res) {
-                    //         res.json().then(callback2);
-                    //     }
-
-                    //     fetch("http://localhost:3000/admin/signup/", {
-                    //         method: "POST",
-                    //         body: JSON.stringify({
-                    //             firstName: FirstName,
-                    //             lastName: "as",
-                    //             username: email,
-                    //             password: password
-                    //         }),
-                    //         headers: {
-                    //             "Content-type": "application/json"
-                    //         }
-                    //     }).then(alert("heelo"));
-                    // }}
                     >Signup</Button>
                     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                         <Alert
