@@ -26,7 +26,7 @@ function Login() {
                     </div>
                     <Button variant='contained' onClick={() => {
                         function callback2(data) {
-                            localStorage.setItem("token", data.token);
+                            localStorage.setItem("token","Bearer " + data.token);
                             window.location = "/"
                         }
 
