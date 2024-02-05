@@ -64,7 +64,7 @@ function Signup() {
     //     enqueueSnackbar('Admin created successfully', { variant });
     //   };
 
-    return <div style={{ display: 'flex', justifyContent: 'center', margin: '5rem 5rem', }}>
+    return <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 5rem', }}>
         <Card variant="outlined" style={{ height: '36rem', width: '25rem' }}>
             <div style={{ margin: '2rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 <center style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }} >
