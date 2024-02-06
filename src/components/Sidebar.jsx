@@ -1,12 +1,11 @@
 import {
-    AccountBox,
     Article,
     Group,
     Home,
-    ModeNight,
-    Person,
-    Settings,
-    Storefront, 
+    HelpCenter,
+    Mail,
+    Logout,
+    YouTube,
   } from "@mui/icons-material";
   import {
     Box,
@@ -29,7 +28,10 @@ import {
                 <ListItemIcon sx={{ fontSize: "small" }}>
                   <Home />
                 </ListItemIcon>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Admin Dashboard" />
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Admin Dashboard"
+                />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -37,7 +39,10 @@ import {
                 <ListItemIcon sx={{ fontSize: "small" }}>
                   <Article />
                 </ListItemIcon>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Plans" />
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Plans"
+                />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -45,33 +50,59 @@ import {
                 <ListItemIcon sx={{ fontSize: "small" }}>
                   <Group />
                 </ListItemIcon>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Projects" />
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Projects"
+                />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton component="a" href="#simple-list" sx={{ p: 1 }}>
                 <ListItemIcon sx={{ fontSize: "small" }}>
-                  <Storefront />
+                  <Mail />
                 </ListItemIcon>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Inbox" />
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Inbox"
+                />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
               <ListItemButton component="a" href="#simple-list" sx={{ p: 1 }}>
                 <ListItemIcon sx={{ fontSize: "small" }}>
-                  <Person />
+                  <HelpCenter />
                 </ListItemIcon>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Help & Support" />
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Help & Support"
+                />
               </ListItemButton>
             </ListItem>
-            <ListItem sx={{ paddingLeft: "1.5rem"}}  >
-              <ListItemButton component="a" href="#simple-list" sx={{ p: 1 }}>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Visit Youtube" />
+  
+            <ListItem>
+              <ListItemButton component="a" href="#simple-list">
+                <ListItemIcon sx={{ fontSize: "small" }}>
+                  <YouTube />
+                </ListItemIcon>
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Youtube"
+                />
               </ListItemButton>
             </ListItem>
-            <ListItem sx={{ paddingLeft: "1.5rem" }} >
-              <ListItemButton component="a" href="#simple-list" sx={{ p: 1 }}>
-                <ListItemText primaryTypographyProps={{ variant: "body2" }} primary="Logout" />
+  
+            <ListItem>
+              <ListItemButton onClick={()=> {
+                localStorage.setItem("token", null);
+                window.location = "/"
+              }} component="a" href="#simple-list">
+                <ListItemIcon sx={{ fontSize: "small" }}>
+                  <Logout />
+                </ListItemIcon>
+                <ListItemText
+                  primaryTypographyProps={{ variant: "body2" }}
+                  primary="Logout"
+                />
               </ListItemButton>
             </ListItem>
           </List>
@@ -81,4 +112,3 @@ import {
   };
   
   export default Sidebar;
-  

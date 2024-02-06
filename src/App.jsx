@@ -29,9 +29,9 @@ function App() {
       <Routes>
         <Route path={"/home" } element={<Home />} />
         <Route path={"/" } element={<Home />} />
-        <Route path={"/login" } element={<Login />} />
+        <Route path={"/login" } element={<Login />} />                                                                      
         <Route path={"/signup" } element={<Signup />} />
-        <Route path={"me"} element={<Sidebar/>} />
+        {Admin && <Route path={"me"} element={<Sidebar/>} />}
       </Routes>
     </Router>
   </div>
