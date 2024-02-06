@@ -4,6 +4,19 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 const jwt = require('jsonwebtoken')
 const { Admin, validate } = require("../DB/user");
+const { authenticateJwt, SECRET } = require("../middleware/auth");
+
+router.get("/me", authenticateJwt, async (req, res) => {
+    const admin = await Admin.findOne({ username: req.user.username });
+    if (!admin) {
+      res.status(401).json({msg: "Admin doesnt exist"})
+      return
+    }
+    res.json({
+        username: admin.username
+    })
+
+});
 
 //admin signup
 router.post('/signup', async (req, res) => {

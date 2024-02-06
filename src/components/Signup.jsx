@@ -32,7 +32,8 @@ function Signup() {
             });
 
             setOpen(true);
-            navigate("/login");
+            setTimeout(() =>{navigate("/login");},3000);
+            
             console.log(res.message);
         } catch (error) {
             if (
