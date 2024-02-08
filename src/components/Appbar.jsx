@@ -64,8 +64,12 @@ function Appbar() {
                     }}
                 >Home</Button>
                 <Button variant="text" sx={{color: "#9e9e9e"}}>Features</Button>
-                <Button variant="text" sx={{color: "#9e9e9e"}}>Pricing</Button>
-                <Button variant="text" sx={{color: "#9e9e9e"}}>T&C</Button>
+                <Button variant="text" sx={{color: "#9e9e9e"}} onClick={() => {
+                        navigate("/prices");
+                    }}>Pricing</Button>
+                <Button variant="text" sx={{color: "#9e9e9e"}} onClick={() => {
+                        navigate("/privacy");
+                    }}>T&C</Button>
                 </div>
             </div>
             <div style={{color: "#9e9e9e", display: "flex", gap: "3rem" }}>

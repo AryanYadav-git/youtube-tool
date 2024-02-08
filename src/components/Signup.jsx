@@ -54,7 +54,7 @@ function Signup() {
     };
 
     return <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 5rem', }}>
-        <Card variant="outlined" style={{ height: '36rem', width: '25rem' }}>
+        <Card variant="outlined" style={{ minHeight: '36rem', width: '25rem' }}>
             <div style={{ margin: '2rem 2rem', display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 <center style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }} >
                     <Typography variant='h6' style={{ fontWeight: 'bold' }}>Signup</Typography>
@@ -86,7 +86,7 @@ function Signup() {
                             setconfirmPassword(elemt.value);
                         }} />
                     </div>
-                    {error && <div >{error}</div>}
+                    {error && <Alert severity="error">{error}</Alert>}
                     <Button variant='contained' onClick={() => {handleSubmit()}
                     }
                     >Signup</Button>
