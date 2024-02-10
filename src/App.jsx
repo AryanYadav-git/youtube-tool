@@ -36,9 +36,8 @@ function App() {
         <Route path={"/signup" } element={<Signup />} />
         <Route path={"/prices" } element={<Pricing />} />
         <Route path={"/privacy" } element={<PrivacyPolicy />} />
-        <Route path={"/error" } element={<Error />} />
-
-        {Admin && <Route path={"me"} element={<Sidebar/>} />}
+        <Route path={"*" } element={<Error />} />
+        {Admin && <Route path={"me"} element={<Sidebar />} />}
       </Routes>
     </Router>
   </div>

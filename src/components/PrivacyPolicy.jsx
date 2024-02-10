@@ -32,8 +32,7 @@ function PrivacyPolicy() {
               {/* Modal panel */}
               <div className="px-6 py-4">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
-                  {" "}
-                  Privacy Policy{" "}
+                Middleman Terms and Conditions
                 </h3>
               </div>
               <div
@@ -47,78 +46,72 @@ function PrivacyPolicy() {
                 }}
               >
                 <h2 className="text-2xl font-bold mb-4">Privacy Policy</h2>
-                <p className="mb-4">
+                <p className="mb-6">
                   This Privacy Policy describes how we collect, use, and
                   disclose information that we obtain through our website and
                   services.
                 </p>
                 <h3 className="text-lg font-semibold mb-2">
-                  Information We Collect
+                Introduction
                 </h3>
-                <p>We may collect the following types of information:</p>
-                <ul className="list-disc ml-6 mb-4">
-                  <li>
-                    Personal Information: We may collect your name, email
-                    address, and other personal information when you provide it
-                    to us.
-                  </li>
-                  <li>
-                    Usage Information: We may collect information about your
-                    usage of our website and services, such as the pages you
-                    visit and your interactions with our content.
-                  </li>
-                </ul>
+                <p className="mb-2">Welcome to Middleman, a platform that facilitates collaboration between editors and YouTubers for video publishing.By accessing or using Middleman, you agree to comply with and be bound by these Terms and Conditions.</p>
                 <h3 className="text-lg font-semibold mb-2">
-                  How We Use Your Information
+                Registration
                 </h3>
-                <p>
-                  We may use your information for various purposes, including:
-                </p>
-                <ul className="list-disc ml-6 mb-4">
-                  <li>Providing our services to you</li>
-                  <li>
-                    Sending you updates and information about our products and
-                    services
-                  </li>
-                  <li>Improving our website and services</li>
-                </ul>
-                <h3 className="text-lg font-semibold mb-2">
-                  Disclosure of Your Information
-                </h3>
-                <p>
-                  We may disclose your information to third parties in certain
-                  circumstances, including:
-                </p>
-                <ul className="list-disc ml-6 mb-4">
-                  <li>With your consent</li>
-                  <li>When required by law</li>
-                  <li>
-                    With service providers and partners who assist us in
-                    delivering our services
-                  </li>
-                </ul>
-                <h3 className="text-lg font-semibold mb-2">Security</h3>
-                <p>
-                  We take reasonable measures to protect your information, but
-                  no method of transmission over the internet is 100% secure. We
-                  cannot guarantee the security of your information.
+                <p className="mb-2">
+                To use Middleman, you must register an account by providing your email, phone number, name, and YouTube API key.You agree to provide accurate and complete information during registration and to keep your account information up to date.
                 </p>
                 <h3 className="text-lg font-semibold mb-2">
-                  Changes to this Privacy Policy
+                Permissions and Responsibilities
                 </h3>
-                <p>
-                  We may update this Privacy Policy from time to time. Any
-                  changes will be posted on our website. By continuing to use
-                  our services, you agree to the updated Privacy Policy.
+                <p className="mb-2">
+                You understand and agree that Middleman acts as a middleman between editors and YouTubers, facilitating the exchange of video content.You grant Middleman permission to access your YouTube account and data through the YouTube Data API for the purpose of video publishing.You are responsible for the content you publish or review on Middleman, including ensuring compliance with YouTube's terms of service and copyright laws.
                 </p>
-                <p className="mt-4">
-                  <a
-                    href="/privacy-policy"
-                    className="text-blue-500 hover:underline"
-                  >
-                    Read our full Privacy Policy
-                  </a>
-                  .
+                <h3 className="text-lg font-semibold mb-2"> Privacy</h3>
+                <p className="mb-2">
+                Middleman respects your privacy and will only use your personal information in accordance with our Privacy Policy.By using Middleman, you consent to the collection, use, and sharing of your information as described in the Privacy Policy.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Security
+                </h3>
+                <p className="mb-2">
+                You are responsible for maintaining the security of your Middleman account, including keeping your login credentials and API key secure.You agree not to share your account credentials or API key with anyone else or allow anyone else to access your account.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Termination
+                </h3>
+                <p className="mb-2">
+                Middleman reserves the right to terminate or suspend your account at any time, with or without cause, and without prior notice. You may terminate your account at any time by contacting Middleman support.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Disclaimer of Warranties
+                </h3>
+                <p className="mb-2">
+                Middleman is provided "as is" and "as available" without any warranties of any kind, express or implied. Middleman does not guarantee the availability, accuracy, or reliability of its services or the content provided by users.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Limitation of Liability
+                </h3>
+                <p className="mb-2">
+                Middleman shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of Middleman.Middleman's total liability to you for all claims arising out of or relating to these Terms and Conditions shall not exceed the amount paid by you, if any, to Middleman during the twelve months preceding the claim.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Governing Law and Dispute Resolution
+                </h3>
+                <p className="mb-2">
+                These Terms and Conditions shall be governed by and construed in accordance with the laws of [Your Jurisdiction].Any dispute arising out of or relating to these Terms and Conditions shall be resolved exclusively by the courts of [Your Jurisdiction].
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Changes to Terms and Conditions
+                </h3>
+                <p className="mb-2">
+                Middleman reserves the right to modify or revise these Terms and Conditions at any time. Any changes to these Terms and Conditions will be effective immediately upon posting the revised terms on Middleman.
+                </p>
+                <h3 className="text-lg font-semibold mb-2">
+                Contact Us
+                </h3>
+                <p className="mb-10">
+                If you have any questions or concerns about these Terms and Conditions, please contact us at [Contact Email].
                 </p>
                 <Checkbox
                   uncheckedIcon={<Done />}
