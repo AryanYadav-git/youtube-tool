@@ -3,6 +3,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 const { Admin } = require("../DB/user");
+require('dotenv').config();
 
 function generateRandomToken() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$';
@@ -31,8 +32,8 @@ const forgot = async (req, res) => {
             host: 'smtp.elasticemail.com',
             port: 2525,
             auth: {
-                user: "middlewoman1024@gmail.com",
-                pass: "2D243806DBF1ED61B812B7ADBC22A2BA294C"
+                user: process.env.MAILUSER,
+                pass: process.env.MAILPASSWORD
             }
         });
 
