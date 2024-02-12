@@ -11,6 +11,7 @@ import axios from 'axios';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Pricing from './components/Pricing';
 import Error from './components/Error';
+import ForgotPassword from './components/ForgotPassword';
 
 function App() {
   const [Admin, setAdmin] = useState(null);
@@ -36,6 +37,7 @@ function App() {
         <Route path={"/signup" } element={<Signup />} />
         <Route path={"/prices" } element={<Pricing />} />
         <Route path={"/privacy" } element={<PrivacyPolicy />} />
+        <Route path={"/forgot-password" } element={<ForgotPassword />} />
         <Route path={"*" } element={<Error />} />
         {Admin && <Route path={"me"} element={<Sidebar />} />}
       </Routes>

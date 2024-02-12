@@ -5,6 +5,7 @@ const cors = require('cors')
 const app = express();
 const port = 3000;
 const adminRouter = require("./Routes/admin");
+const passRouter = require("./Routes/forgot-pass");
 const connection = require("./db");
 
 connection();
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/admin", adminRouter)
+app.use("/pass", passRouter);
 // app.use("/editor", editorRouter)
 
 app.listen(port, () => {

@@ -20,7 +20,9 @@ function Login() {
                         let elemt = e.target;
                         setPassword(elemt.value);
                     }} />
-                        <Link href="#" underline="always" style={{display:"flex", width:'100%', justifyContent:'end'}}>
+                        <Link href="http://localhost:5173/forgot-password" underline="always" style={{display:"flex", width:'100%', justifyContent:'end'}} onClick={() => {
+                        navigate("/forgot-password");
+                    }}>
                             Forgot Password
                         </Link>
                     </div>
