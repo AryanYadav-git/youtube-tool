@@ -21,7 +21,8 @@ const forgot = async (req, res) => {
         const admin = await Admin.findOne({ username });
         if (!admin) {
             res.status(400).send({ message: "Invalid email" });
-            throw new Error(`Invalid email`);
+            // throw new Error(`Invalid email`);
+            return;
         }
         const token = generateRandomToken();
         console.log(token);
@@ -47,7 +48,10 @@ const forgot = async (req, res) => {
 
         console.log("Message sent: %s", info.messageId);
         res.status(201).json(info.response);
-    } catch (e) { res.status(400).json(e) }
+    } catch (e) { 
+        console.log(e);
+        res.status(400).json({"message": e}); 
+    }
 }
 
 router.post('/passwords', forgot);

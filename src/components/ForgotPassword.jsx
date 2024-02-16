@@ -7,17 +7,30 @@ import {
     Card,
     TextField,
     Typography,
+    Alert
 } from "@mui/material";
-
-const handleSubmit = async (e) => {
-    const {data : res} = await axios.post("http://localhost:3000/pass/passwords", {
-        username: Email
-    });
-    console.log(res);
-}
 
 function ForgotPassword() {
     const [Email, setEmail] = useState("");
+    const [error, setError] = useState("");
+    const [open, setOpen] = useState(false);
+
+    const handleSubmit = async (e) => {
+        try{
+            const {data : res} = await axios.post("http://localhost:3000/pass/passwords", {
+            username: Email
+        });
+        console.log(res);
+        }catch (error) {
+            if (
+                error.response
+            ) {
+                console.log(error)
+                console.log("1")
+                setError(error.response.data.message);
+            }
+        }
+    }
 
     return (
         <div
@@ -45,13 +58,11 @@ function ForgotPassword() {
                                 setEmail(elemt.value);
                             }}
                         />
+                        {error && <Alert severity="error">{error}</Alert>}
                         <Button variant="contained" style={{
-                            margin: "1rem 0", // Updated margin value
-                        }} onClick={async () => {
-                            const {data : res} = await axios.post("http://localhost:3000/pass/passwords", {
-                                username: Email
-                            })
-                        }}>Send</Button>
+                            // margin: "0.5rem 0", // Updated margin value
+                        }} onClick = {handleSubmit}
+                        >Send</Button>
                     </center>
                 </div>
             </Card>
