@@ -63,7 +63,7 @@ function Signup() {
                         setName(elemt.value);
                     }} />
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <TextField required id="outlined-basic" label="Email" variant="outlined" onChange={(e) => {
+                        <TextField required id="outlined-basic" type="email" label="Email" variant="outlined" onChange={(e) => {
                             let elemt = e.target;
                             setEmail(elemt.value);
                         }} />
